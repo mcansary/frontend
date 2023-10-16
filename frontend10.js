@@ -23,6 +23,6 @@ fruits.forEach(e => {
     // console.log(e.name + ' 5個分の重さは約' +  e.weight_per * 5 + 'g');
     console.log(e.weight_per);
     // 総重量にフルーツの重さを加算する
-    
+    total += e.weight_per;
 });
 console.log(total);
