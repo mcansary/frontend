@@ -80,14 +80,20 @@ function setSubMenu(idx) {
     // 大分類の配列に保存されている数だけoptionとして追加する
     // for (let i = 0; i < cate2[idx].length; i++) {
     // ↑↑フロントエンド13課題4にて書き換え↓↓
-    cate2[idx].forEach(function(e, i){
+    cate2[idx].forEach(function(e){
         // option要素を新規に作成
         let option = document.createElement('option');
-        option.value = cate2[idx][i];    // optionの値に配列の値を代入
-        option.text = cate2[idx][i];     // optionの表示文字列に配列の値を代入
+    
+        // option.value = cate2[idx][i];    // optionの値に配列の値を代入
+        // option.text = cate2[idx][i];     // optionの表示文字列に配列の値を代入
+        // ↑↑フロントエンド13課題4にて書き換え↓↓
+        console.log(e);
+        option.value = e;    // optionの値に配列の値を代入
+        option.text = e;     // optionの表示文字列に配列の値を代入
+    
         cate2Element.appendChild(option); // select要素の子要素としてoption要素を追加        
     // }
-     });
+    });
 }
 
 //　商品一覧の表示の巻子
