@@ -65,8 +65,13 @@ function setMainMenu() {
     cate1.forEach(function(e, i){
         // option要素を新規に作成
         let option = document.createElement('option');
-        option.value = cate1[i];    // optionの値に配列の値を代入
-        option.text = cate1[i];     // optionの表示文字列に配列の値を代入
+        
+        // option.value = cate1[i];    // optionの値に配列の値を代入
+        // option.text = cate1[i];     // optionの表示文字列に配列の値を代入
+       // ↑↑フロントエンド13課題4にて書き換え↓↓
+        option.value = e;
+        option.text = e;
+        
         cate1Element.appendChild(option); // select要素の子要素としてoption要素を追加        
     // }
         });
@@ -87,7 +92,6 @@ function setSubMenu(idx) {
         // option.value = cate2[idx][i];    // optionの値に配列の値を代入
         // option.text = cate2[idx][i];     // optionの表示文字列に配列の値を代入
         // ↑↑フロントエンド13課題4にて書き換え↓↓
-        console.log(e);
         option.value = e;    // optionの値に配列の値を代入
         option.text = e;     // optionの表示文字列に配列の値を代入
     
@@ -102,12 +106,19 @@ function viewItemList(tag) {
     // for (let i = 0; i < itemList.length; i++) {
     // ↑↑フロントエンド13課題4にて書き換え↓↓
     itemList.forEach(function(e, i){
-        if (itemList[i].tags.some(t => t === tag)) {
-            // li要素を作成
+        // if (itemList[i].tags.some(t => t === tag)) {
+        //     // li要素を作成
+        //     let li = document.createElement('li');
+        //     // テキスト情報を作成
+        //     let text = document.createTextNode(itemList[i].id + ':' + itemList[i].name + ' price:' + itemList[i].price);
+        //     // ul要素に追加
+        //     li.appendChild(text);
+        //     itemListElement.appendChild(li);
+        // }
+        // ↑↑フロントエンド13課題4にて書き換え↓↓
+        if (e.tags.some(t => t === tag)) {
             let li = document.createElement('li');
-            // テキスト情報を作成
-            let text = document.createTextNode(itemList[i].id + ':' + itemList[i].name + ' price:' + itemList[i].price);
-            // ul要素に追加
+            let text = document.createTextNode(e.id + ':' + e.name);
             li.appendChild(text);
             itemListElement.appendChild(li);
         }
