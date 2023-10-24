@@ -111,47 +111,62 @@ cate2Element.addEventListener('change', function(){
 });
 
 
-// 商品一覧をファイルから取得
+// $(function () {
+//     // cate1
+//     $.ajax({
+//         url: 'json/cate1.json',
+//         dataType: 'json'
+//     })
+//     .done(function (data) {
+//         cate1 = data;
+//         // 大分類の生成
+//         setMainMenu(); 
+//     })
+//     .fail(function () {
+//         alert("ファイルが読み込めませんでした");
+//     });
+
+//     // cate2
+//     $.ajax({
+//         url: 'json/cate2.json',
+//         dataType: 'json'
+//     })
+//     .done(function (data) {
+//       cate2 = data;
+      
+//     })
+//     .fail(function () {
+//         alert("ファイルが読み込めませんでした");
+//     });
+
+//     // 商品一覧をファイルから取得
+//     $.ajax({
+//         url: 'json/item.json',
+//         dataType: 'json'
+//     })
+//     .done(function (data) {
+//         itemList = data;
+//     })
+//     .fail(function () {
+//         alert("ファイルが読み込めませんでした");
+//     });
+    
+// });
+
+// ↑ajaxをまとめて記述
 $(function () {
     $.ajax({
-        url: 'json/item.json',
+        url: 'json/18.json',
         dataType: 'json'
     })
     .done(function (data) {
-        itemList = data;
-        
-    })
-    .fail(function () {
-        alert("ファイルが読み込めませんでした");
-    });
-    
-    $.ajax({
-        url: 'json/cate1.json',
-        dataType: 'json'
-    })
-    .done(function (data) {
-        cate1 = data
-    })
-    .fail(function () {
-        alert("ファイルが読み込めませんでした");
-    });
-    
-    $.ajax({
-        url: 'json/cate2.json',
-        dataType: 'json'
-    })
-    .done(function (data) {
-       cate2 = data
+        cate1 = data.cate1;
+        cate2 = data.cate2;
+        itemList = data.item;
+        // 大分類の生成
+        setMainMenu(); 
     })
     .fail(function () {
         alert("ファイルが読み込めませんでした");
     });
 });
-
-// 大分類の生成
-setMainMenu(); 
-    
-
-
-
-    

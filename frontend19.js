@@ -4,22 +4,22 @@
     constructor(props) {
       super(props);
       // 状態を保持するプロパティstate
-      this.state = { count : 100 };
+      this.state = { count : 10 };
     }
 
     //　出力処理
     render() {
-      if (this.state.count == 0) {
-        return React.createElement(
-        "button",
-        { onClick:() => this.setState({ count : 100 }) },
-        "カウント数：" + this.state.count
-        );
-      }
+      // if (this.state.count == 0) {
+      //   return React.createElement(
+      //   "button",
+      //   { onClick:() => this.setState({ count : 100 }) },
+      //   "カウント数：" + this.state.count
+      //   );
+      // }
 
       return React.createElement(
         "button",
-        { onClick:() => this.setState({ count : this.state.count - 1 }) },
+        { onClick:() => this.setState({ count : countDown(this.state.count) }) },
         "カウント数：" + this.state.count
         
       );
@@ -36,3 +36,11 @@
     // 出力させたい場所のコンテナ（HTML側の要素）
     domContainer
   );
+  
+function countDown(count) {
+  if (count == 0) {
+    return 100;
+  } else {
+    return count - 1;
+  }
+}

@@ -2,7 +2,7 @@
 class MessageH1 extends React.Component {
   // コンストラクター
   constructor() {
-    super();
+    super();// 親のコンストラクタを呼ぶ
   }
 
   //　出力処理
